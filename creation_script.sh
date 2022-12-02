@@ -9,7 +9,7 @@ generate_file()
    echo "class Part_$1(BaseClass):" >> part_$1.py
    echo "" >> part_$1.py
    echo "    def __init__(self):" >> part_$1.py
-   echo "        super().__init__($2)" >> part_$1.py
+   echo "        super().__init__("$((10#$2))")" >> part_$1.py
    echo "" >> part_$1.py
    echo "    def execute_internal(self, filepath):" >> part_$1.py
    echo "        print(open_file(filepath))" >> part_$1.py

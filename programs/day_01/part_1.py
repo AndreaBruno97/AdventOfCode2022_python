@@ -4,7 +4,7 @@ from common import *
 class Part_1(BaseClass):
 
     def __init__(self):
-        super().__init__(01)
+        super().__init__(1)
 
     def execute_internal(self, filepath):
         print(open_file(filepath))
