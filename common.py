@@ -26,8 +26,12 @@ def print_result(text):
     print_colored(text, Fore.YELLOW)
 
 
+def print_debug(text):
+    print_colored(text, Fore.LIGHTBLUE_EX)
+
+
 def print_colored(text, color: Fore):
-    print(color + text + Style.RESET_ALL)
+    print(color + str(text) + Style.RESET_ALL)
 
 # endregion
 
@@ -43,7 +47,7 @@ def open_file(filename) -> str:
 def open_file_lines(filename) -> list[str]:
     with open(filename) as f:
         content = f.readlines()
-    return content
+    return [x.replace("\n", "") for x in content]
 
 
 def open_file_int_array(filename) -> list[int]:
@@ -75,7 +79,7 @@ class BaseClass:
         elif filetype == FileType.TEST:
             filename = "example.txt"
 
-        complete_filename = f"../../input_files/day_{self.day}/{filename}"
+        complete_filename = f"../../input_files/day_{self.day:02d}/{filename}"
 
         print(f"Start Execution {filename}:")
         result = self.execute_internal(complete_filename)
