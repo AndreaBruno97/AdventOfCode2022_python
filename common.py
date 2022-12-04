@@ -50,6 +50,10 @@ def open_file_lines(filename) -> list[str]:
     return [x.replace("\n", "") for x in content]
 
 
+def open_file_str_array(filename) -> list[list[str]]:
+    return [list(x) for x in open_file_lines(filename)]
+
+
 def open_file_int_array(filename) -> list[int]:
     return [int(x) for x in open_file_lines(filename)]
 
