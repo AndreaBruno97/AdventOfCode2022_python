@@ -62,8 +62,8 @@ def open_file_int_matrix(filename) -> list[list[int]]:
 
 
 class BaseClass:
-    def __init__(self, day):
-        self.day = day
+    def __init__(self):
+        pass
 
     # region Execution Functions
 
@@ -79,7 +79,7 @@ class BaseClass:
         elif filetype == FileType.TEST:
             filename = "example.txt"
 
-        complete_filename = f"../../input_files/day_{self.day:02d}/{filename}"
+        complete_filename = f"../input_files/{filename}"
 
         print(f"Start Execution {filename}:")
         result = self.execute_internal(complete_filename)

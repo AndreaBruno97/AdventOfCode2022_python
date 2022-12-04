@@ -1,7 +1,6 @@
 generate_file()
 {
   # $1 -> part number
-  # $2 -> day number
 
    echo "from common import *" > part_$1.py
    echo "" >> part_$1.py
@@ -9,7 +8,7 @@ generate_file()
    echo "class Part_$1(BaseClass):" >> part_$1.py
    echo "" >> part_$1.py
    echo "    def __init__(self):" >> part_$1.py
-   echo "        super().__init__("$((10#$2))")" >> part_$1.py
+   echo "        super().__init__()" >> part_$1.py
    echo "" >> part_$1.py
    echo "    def execute_internal(self, filepath):" >> part_$1.py
    echo "        print(open_file(filepath))" >> part_$1.py
@@ -24,20 +23,23 @@ generate_file()
 
 }
 
-mkdir "programs"
-mkdir "input_files"
+mkdir "days"
+cd "days"
 
 for day in $(seq -f "%02g" 1 25)
 do
-	mkdir "input_files/day_$day"
-	cd "input_files/day_$day"
+  mkdir "day_$day"
+  cd "day_$day"
+
+	mkdir "input_files"
+	cd "input_files"
 	touch input.txt
 	touch example.txt
 
-	cd ../..
+	cd ..
 
-	mkdir "programs/day_$day"
-	cd "programs/day_$day"
+	mkdir "programs"
+	cd "programs"
 	generate_file "1" "$day"
 	generate_file "2" "$day"
 
