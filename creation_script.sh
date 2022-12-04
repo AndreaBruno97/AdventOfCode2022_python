@@ -19,7 +19,7 @@ generate_file()
    echo "p$1 = Part_$1()" >> part_$1.py
    echo "p$1.test(0)" >> part_$1.py
    echo "p$1.execute()" >> part_$1.py
-   echo "" >> part_$1.py
+   #echo "" >> part_$1.py
 
 }
 
