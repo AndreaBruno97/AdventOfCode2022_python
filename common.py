@@ -33,6 +33,7 @@ def print_debug(text):
 def print_colored(text, color: Fore):
     print(color + str(text) + Style.RESET_ALL)
 
+
 # endregion
 
 
@@ -93,9 +94,9 @@ class BaseClass:
         return result
 
     def test(self,
-             expected_result: int,
+             expected_result,
              additional_test_filenames: list[str] = [],
-             additional_test_expected_results: list[int] = []):
+             additional_test_expected_results=[]):
 
         print_title("Test:")
         main_test_result = self.execute(FileType.TEST)
