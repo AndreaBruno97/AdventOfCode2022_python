@@ -95,8 +95,7 @@ class BaseClass:
 
     def test(self,
              expected_result,
-             additional_test_filenames: list[str] = [],
-             additional_test_expected_results=[]):
+             additional_test_list: list[(str, int)] = [],):
 
         print_title("Test:")
         main_test_result = self.execute(FileType.TEST)
@@ -105,7 +104,7 @@ class BaseClass:
         else:
             print_success("Main test succeeded")
 
-        for cur_filename, cur_expected_value in zip(additional_test_filenames, additional_test_expected_results):
+        for cur_filename, cur_expected_value in additional_test_list:
             cur_test_result = self.execute(FileType.OTHER, cur_filename)
             if cur_test_result != cur_expected_value:
                 print_error(f"Test {cur_filename} failed")
