@@ -8,7 +8,7 @@ def print_cycle(cur_cycle, register_value):
     if horizontal_position == 0 and cur_cycle != 1:
         character_to_print += "\n"
 
-    character_to_print += u"\u2588" if horizontal_position in range(register_value - 1, register_value + 2) else "."
+    character_to_print += u"\u2588" if horizontal_position in range(register_value - 1, register_value + 2) else " "
 
     return character_to_print
 
@@ -40,12 +40,12 @@ class Part_2(BaseClass):
 
 p2 = Part_2()
 p2.test(
-    """##..##..##..##..##..##..##..##..##..##..
-###...###...###...###...###...###...###.
-####....####....####....####....####....
-#####.....#####.....#####.....#####.....
-######......######......######......####
-#######.......#######.......#######.....""",
+    """██  ██  ██  ██  ██  ██  ██  ██  ██  ██  
+███   ███   ███   ███   ███   ███   ███ 
+████    ████    ████    ████    ████    
+█████     █████     █████     █████     
+██████      ██████      ██████      ████
+███████       ███████       ███████     """,
     solution_in_new_line=True
 )
 p2.execute(solution_in_new_line=True)
