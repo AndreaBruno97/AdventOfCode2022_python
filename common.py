@@ -51,7 +51,7 @@ def open_file_lines(filename) -> list[str]:
     return [x.replace("\n", "") for x in content]
 
 
-def open_file_str_array(filename) -> list[list[str]]:
+def open_file_str_matrix(filename) -> list[list[str]]:
     return [list(x) for x in open_file_lines(filename)]
 
 

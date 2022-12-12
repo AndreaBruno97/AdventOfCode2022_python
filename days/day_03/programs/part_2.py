@@ -7,7 +7,7 @@ class Part_2(BaseClass):
         super().__init__()
 
     def execute_internal(self, filepath):
-        backpack_list = open_file_str_array(filepath)
+        backpack_list = open_file_str_matrix(filepath)
 
         total_priority = 0
 
